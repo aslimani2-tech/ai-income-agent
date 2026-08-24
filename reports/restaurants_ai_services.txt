@@ -1,0 +1,44 @@
+### 10 Realistic AI Services for Small Restaurants in Morocco
+
+| # | Service | Problem it Solves | Delivery Method | Realistic Starting Price (MAD) |
+|---|---------|--------------------|-----------------|---------------------------------|
+| 1 | AI‑Powered Menu Optimisation | Restaurants often keep outdated menus or offer items that do not sell well, wasting ingredients and storage space. | • Collect sales data over a month via a simple Google Sheet or POS export.
+• Run an AI model (e.g., clustering + regression) to suggest high‑margin items and remove low‑performers.
+• Deliver a PDF report + an interactive dashboard on Google Data Studio. | 400 – 600 | 
+| 2 | Voice‑Activated Order Assistant | In busy peak times, waitstaff can lose orders or misread them, leading to errors and unhappy customers. | • Integrate with existing tablets or a Raspberry Pi with a microphone.
+• Use a speech‑to‑text API (Google Cloud Speech) plus a simple intent classifier.
+• Show the recognised order on the tablet, automatically sending it to the kitchen. | 800 – 1 200 |
+| 3 | AI‑Based Stock Forecasting | Food waste is high due to unpredictable demand; small kitchens struggle to keep stock levels right. | • Connect to POS and inventory spreadsheets.
+• Run a time‑series model (Prophet or LSTM) to forecast daily/weekly demand.
+• Export a CSV of recommended stock orders and a visual dashboard. | 500 – 800 |
+| 4 | Smart Table‑Reservation Scheduler | Over‑booking or empty tables hurt revenue and customer experience. | • Deploy a lightweight web app (Flask) where the owner can input opening hours.
+• AI schedules reservations to maximize table turnover based on historical booking patterns.
+• Export a printable schedule. | 300 – 500 |
+| 5 | Automated Social‑Media Post Generator | Small restaurants often lack the time to create engaging content, limiting online presence. | • Scrape past menu photos, customer reviews.
+• Use GPT‑4 to generate captions, hashtags, and a weekly posting calendar.
+• Provide content in a Google Docs template and optional scheduling via Buffer. | 350 – 600 |
+| 6 | Sentiment‑Analysis of Online Reviews | Negative reviews can harm reputation, but owners may not know the root cause. | • Crawl TripAdvisor, Google Maps, and Facebook.
+• Run sentiment analysis and keyword extraction.
+• Deliver a report highlighting pain points and suggested improvements. | 400 – 700 |
+| 7 | AI‑Powered Loyalty Program | Building repeat customers is expensive; owners often rely on generic punch cards. | • Build a simple web app (React) that tracks visits, rewards points, and sends personalized offers.
+• Integrate with QR‑code scans at the counter.
+• Offer a hosted version for 15 MAD/month. | 1 000 – 1 500 for setup |
+| 8 | Menu Ingredient Price Tracker | Fluctuating ingredient costs can erode margins; owners rarely track price changes systematically. | • Pull pricing data from local wholesale APIs or manual CSV uploads.
+• Use AI to flag significant price changes and suggest menu price adjustments.
+• Deliver a spreadsheet + email alerts. | 350 – 600 |
+| 9 | Voice‑Based Staff Training Bot | Training new staff on recipes and service standards is time‑consuming. | • Build a chatbot using GPT‑4 that can answer questions about recipes, plating, and customer service.
+• Deploy on the restaurant’s intranet or a mobile app. | 600 – 900 |
+| 10 | AI‑Driven Menu‑Item Cost Calculator | Owners often guess ingredient costs, leading to mispriced dishes. | • Upload a list of ingredients and quantities.
+• AI matches them with local market prices (web‑scraped or API) and calculates the cost per dish.
+• Export a PDF with suggested retail prices. | 300 – 500 |
+
+**Implementation Tips**
+1. **Low‑Barrier Entry** – Use no‑code tools (Zapier, Integromat) for integration whenever possible.
+2. **Local Languages** – Offer Arabic & French UI to cater to the majority of staff.
+3. **Pricing** – Start with a one‑time setup fee; offer monthly maintenance at 5–10 MAD per table or per month.
+4. **Pilot Projects** – Offer a 30‑day free trial for the first 3 restaurants to build testimonials.
+5. **Compliance** – Ensure data handling follows GDPR and Moroccan data protection laws.
+
+---
+
+**Contact**: If you need help building any of these services or customizing the price points further, let me know!
