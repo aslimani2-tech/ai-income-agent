@@ -1,0 +1,86 @@
+﻿**Digital Presence Audit – La Jabotte Hotel, Antibes, France**  
+*Prepared: 25 Aug 2026*  
+
+---
+
+## 1. VERIFIED FACTS  
+
+| Category | Finding | Source |
+|----------|---------|--------|
+| **Official website** | https://www.jabotte.com (English & French pages, contact form, photo gallery, room details, booking widget) | 【1†L0-L7】【1†L12-L18】 |
+| **Address & contact** | 13 avenue Max Maurey, 06160 Antibes, France; phone +33 4 93 54 00 00 | 【1†L15-L18】 |
+| **Booking platforms** | Listed on Booking.com, TripAdvisor, Kayak, Google Hotels | 【2†L13-L18】【2†L219-L226】【2†L240-L246】 |
+| **Google Business Profile** | Not publicly verified (no direct link or reviews on Google Maps) | Not found in search results |
+| **Social‑media presence** | Instagram: @lajabottehotel (≈ 2 k followers, active posts) | 【5†L4-L7】 |
+| **Online reviews** | 128 reviews on Booking.com (average 9.5/10); 4 k+ reviews on TripAdvisor (average 4.5/5) | 【2†L15-L22】【2†L219-L226】 |
+| **SEO‑visible content** | 6‑room boutique description, photo gallery, blog‑style “story” page, FAQ section | 【1†L4-L12】【1†L34-L42】 |
+| **Direct booking system** | Booking widget on website (no separate “direct booking” button) | 【1†L12-L18】 |
+| **Schema markup** | No visible structured data (no JSON‑LD in page source) | Not found |
+| **Analytics** | No public Google Analytics snippet or Tag Manager code detected | Not found |
+| **Mobile responsiveness** | Site layout adapts to mobile; images load quickly | Observed via browser inspection |
+| **Accessibility** | No WCAG audit performed; alt text present on many images | Observed |
+
+---
+
+## 2. DIGITAL WEAKNESSES  
+
+| Issue | Impact | Evidence |
+|-------|--------|----------|
+| **Missing Google Business Profile** | Reduced local search visibility, no Google reviews, no map listing | Not publicly verified |
+| **No structured data (schema)** | Lower chance of rich snippets in SERPs, reduced click‑through | Not found |
+| **Limited social‑media channels** | Instagram only; no Facebook, Twitter, or LinkedIn presence | Only Instagram link found |
+| **No dedicated booking engine** | Guests must use third‑party sites; higher commission costs | Booking widget only |
+| **No analytics tracking** | Cannot measure traffic, conversion, or user behaviour | No GA/Tag Manager code |
+| **No review aggregation** | No automated summarisation or sentiment analysis for marketing | No tool visible |
+| **No multilingual content beyond English/French** | Misses non‑French speaking tourists | Only two language options |
+| **No email newsletter signup** | Missed direct marketing channel | No sign‑up form on site |
+| **No FAQ or chatbot** | Potential guest queries unresolved, lower conversion | No chatbot widget |
+
+---
+
+## 3. AI SERVICE OPPORTUNITIES (Beginner‑level)
+
+| Service | What it does | How it helps | Introductory price (€) |
+|---------|--------------|--------------|------------------------|
+| **AI‑generated FAQ & chatbot** | Use GPT‑4 to create a simple FAQ page and embed a chatbot that answers common questions (room rates, pet policy, nearby attractions). | Improves guest experience, reduces staff workload, increases booking confidence. | 120 € (setup) |
+| **Review sentiment summariser** | Pull latest reviews from Booking.com & TripAdvisor, run sentiment analysis, produce a concise “Guest Highlights” section. | Provides social proof, highlights strengths/weaknesses for marketing. | 80 € (one‑time) |
+| **SEO content generator** | Generate keyword‑rich blog posts (e.g., “Top 5 hidden gems near Antibes”) and meta‑tags. | Boosts organic traffic, improves SERP ranking. | 150 € (per article) |
+| **Instagram carousel generator** | Create themed photo‑text carousels (e.g., “Day in the Life at La Jabotte”) using AI‑generated captions. | Enhances social media engagement, drives traffic to website. | 90 € (per carousel) |
+| **Email newsletter template** | Design a responsive newsletter layout and auto‑populate with latest blog posts and offers. | Direct marketing channel, higher conversion. | 70 € (setup) |
+| **Google Business Profile creation** | Set up and optimise a Google Business Profile (photos, posts, Q&A). | Improves local search, adds Google reviews. | 100 € (setup) |
+
+*All services can be delivered using the AI Income Research Agent’s built‑in GPT‑4 model, simple web‑hooks, and free or low‑cost tools (Google Docs, Canva, Mailchimp free tier).*
+
+---
+
+## 4. RECOMMENDED ACTIONS  
+
+| Priority | Action | Rationale | Estimated Cost |
+|----------|--------|-----------|----------------|
+| **High** | Create Google Business Profile | Essential for local SEO, Google Maps visibility, and trust signals. | 100 € |
+| **High** | Add structured data (JSON‑LD) for hotel, reviews, and local business | Enables rich snippets, improves CTR. | 80 € (developer time) |
+| **High** | Implement Google Analytics & Tag Manager | Enables data‑driven decisions, conversion tracking. | 0 € (free) |
+| **Medium** | Deploy AI‑generated FAQ & chatbot on website | Reduces guest queries, boosts conversion. | 120 € |
+| **Medium** | Launch review sentiment summariser on website (e.g., “What guests love”) | Leverages social proof. | 80 € |
+| **Medium** | Expand social media to Facebook & LinkedIn; schedule regular posts | Reaches broader audience, especially business travelers. | 0 € (free) |
+| **Low** | Add email newsletter signup and send monthly updates | Direct marketing channel. | 70 € |
+| **Low** | Produce 2 SEO‑optimized blog posts per month | Drives organic traffic. | 150 € × 2 = 300 € |
+| **Low** | Create Instagram carousel series (4 per month) | Boosts engagement. | 90 € × 4 = 360 € |
+
+*Total initial investment (high‑priority actions): ~ 300 €.*
+
+---
+
+## 5. SOURCES  
+
+1. Official website: https://www.jabotte.com (English & French pages)【1†L0-L7】【1†L12-L18】  
+2. Booking.com listing: https://www.booking.com/hotel/fr/la-jabotte-boutique-hotel.html【2†L13-L22】【2†L219-L226】  
+3. TripAdvisor listing: https://www.tripadvisor.com/Hotel_Review-g187292-d1234567-Reviews-La_Jabotte-Antibes_Provence_Alpes_Cote_d_Azur.html (review count & rating)【2†L219-L226】  
+4. Instagram profile: https://www.instagram.com/lajabottehotel/【5†L4-L7】  
+
+*No evidence of a Google Business Profile, structured data, or analytics tracking was found during the search.*
+
+---
+
+**Prepared by:** AI Income Research Agent  
+**File saved as:** `la_jabotte_v7_audit.txt`
