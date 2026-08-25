@@ -14,7 +14,7 @@ client = Groq(api_key=api_key)
 
 
 def save_report(filename, content):
-    """Save a report inside the reports folder."""
+    """Save a report safely inside the reports folder."""
 
     os.makedirs("reports", exist_ok=True)
 
@@ -31,91 +31,83 @@ def save_report(filename, content):
     return f"Report saved successfully: {path}"
 
 
-tools = [
-    {
-        "type": "function",
-        "function": {
-            "name": "save_report",
-            "description": (
-                "Save a completed research report as a text file "
-                "inside the reports folder."
-            ),
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "filename": {
-                        "type": "string",
-                        "description": "Filename for the report."
-                    },
-                    "content": {
-                        "type": "string",
-                        "description": "Complete report content."
-                    }
+save_report_tool = {
+    "type": "function",
+    "function": {
+        "name": "save_report",
+        "description": (
+            "Save a completed research report as a text file. "
+            "Use this only when the user explicitly asks for the "
+            "research to be saved."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "filename": {
+                    "type": "string",
+                    "description": "Filename for the report."
                 },
-                "required": ["filename", "content"]
-            }
+                "content": {
+                    "type": "string",
+                    "description": "Complete report content."
+                }
+            },
+            "required": ["filename", "content"],
+            "additionalProperties": False
         }
-    },
-    {
-        "type": "browser_search"
     }
-]
+}
 
 
 SYSTEM_PROMPT = """
 You are the AI Income Research Agent.
 
-Your job is to help the user discover realistic and legal
-business opportunities using AI.
+Your job is to perform practical business research that can help
+the user discover legitimate opportunities and potential clients.
 
-You can:
-1. Search the web when current information is required.
-2. Analyze information you find.
-3. Save completed reports using the save_report tool.
+Rules:
 
-When the user asks for current research, use browser_search.
-
-When the user explicitly asks for a report to be saved,
-use save_report.
-
-Do not invent facts, companies, prices, websites, or sources.
-Clearly distinguish verified information from your own analysis.
-
-Your goal is to produce useful research that could eventually
-help the user find clients and generate additional income.
+- Be concise and factual.
+- Use web search when the user asks for current information,
+  research, businesses, competitors, prices, or market information.
+- Do not invent facts.
+- Clearly distinguish facts from your analysis.
+- When sources are available, preserve useful source references.
+- Only save a report when the user explicitly asks you to save it.
+- Keep reports practical and useful for business decisions.
 """
 
 
-def run_agent(task):
+def run_agent(task, research_mode=False):
 
     messages = [
         {
-            "role": "system",
-            "content": SYSTEM_PROMPT
-        },
-        {
             "role": "user",
-            "content": task
+            "content": SYSTEM_PROMPT + "\n\nUSER TASK:\n" + task
         }
     ]
+
+    tools = [save_report_tool]
+
+    # Add browser search only when research is actually requested.
+    if research_mode:
+        tools.append({
+            "type": "browser_search"
+        })
 
     response = client.chat.completions.create(
         model="openai/gpt-oss-20b",
         messages=messages,
         tools=tools,
         tool_choice="auto",
+        reasoning_effort="low",
+        include_reasoning=False,
+        max_completion_tokens=1500,
+        temperature=0.4,
     )
 
     message = response.choices[0].message
 
-    # Display tool activity
-    if message.tool_calls:
-        print("\n🛠️ TOOLS USED:")
-
-        for tool_call in message.tool_calls:
-            print(f"   • {tool_call.function.name}")
-
-    # If the model requested save_report, execute it.
     if message.tool_calls:
 
         messages.append(message)
@@ -133,21 +125,22 @@ def run_agent(task):
                     arguments["content"]
                 )
 
-                print(f"\n📄 {result}")
+                print("\n📄 " + result)
 
-                messages.append(
-                    {
-                        "role": "tool",
-                        "tool_call_id": tool_call.id,
-                        "content": result
-                    }
-                )
+                messages.append({
+                    "role": "tool",
+                    "tool_call_id": tool_call.id,
+                    "content": result
+                })
 
-        # Ask the model for the final response.
+        # One final call after the local tool execution.
         final_response = client.chat.completions.create(
             model="openai/gpt-oss-20b",
             messages=messages,
-            tools=tools,
+            reasoning_effort="low",
+            include_reasoning=False,
+            max_completion_tokens=500,
+            temperature=0.4,
         )
 
         return final_response.choices[0].message.content
@@ -158,14 +151,40 @@ def run_agent(task):
 if __name__ == "__main__":
 
     print("=" * 60)
-    print("🤖 AI INCOME RESEARCH AGENT v2")
+    print("🤖 AI INCOME RESEARCH AGENT v3")
     print("=" * 60)
 
-    task = input("\nWhat should the agent research?\n> ")
+    task = input("\nWhat should the agent do?\n> ")
+
+    # Research mode is activated only for research/current-information tasks.
+    research_keywords = [
+        "research",
+        "search",
+        "current",
+        "latest",
+        "find businesses",
+        "find restaurants",
+        "competitors",
+        "market",
+        "audit"
+    ]
+
+    research_mode = any(
+        keyword in task.lower()
+        for keyword in research_keywords
+    )
+
+    print(
+        "\n🔎 Research mode:",
+        "ON" if research_mode else "OFF"
+    )
 
     try:
 
-        answer = run_agent(task)
+        answer = run_agent(
+            task,
+            research_mode=research_mode
+        )
 
         print("\n🤖 FINAL RESULT")
         print("-" * 60)
