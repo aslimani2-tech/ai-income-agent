@@ -70,15 +70,22 @@ IMPORTANT RESEARCH RULES:
 1. When research mode is enabled, use web search.
 2. Do not invent facts, numbers, ratings, follower counts,
    traffic statistics, technical measurements, or business details.
-3. For every important factual claim, provide a source URL
-   when the information is available from the web.
-4. Clearly separate:
+3. Never invent, guess, or fabricate a source, URL, citation,
+   publication, article, statistic, or reference.
+
+4. Only include a source URL if it was actually obtained or
+   verified during the current research.
+
+5. If web research was not performed, do not provide external
+   sources. Instead state that the information is general
+   analysis and was not web-verified.
+6. Clearly separate:
    - VERIFIED FACTS
    - ANALYSIS
    - RECOMMENDATIONS
-5. If a fact cannot be verified publicly, explicitly say:
+7. If a fact cannot be verified publicly, explicitly say:
    "Not publicly verified."
-6. Never present an inference as a verified fact.
+8. Never present an inference as a verified fact.
 
 REPORT RULES:
 
